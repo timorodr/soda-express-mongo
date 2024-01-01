@@ -3,6 +3,7 @@ require("dotenv").config()
 const express = require("express")
 const morgan = require("morgan")
 const methodOverride = require("method-override")
+const SodaRouter = require("./controllers/soda")
 
 
 
@@ -25,6 +26,8 @@ app.use("/static", express.static("public"))
 app.get("/", (req, res) => {
     res.send("server is Working")
 })
+
+app.use("/soda", SodaRouter)
 
 
 /******************* SERVER LISTENER */
