@@ -1,0 +1,8 @@
+<h1>List of Sodas</h1>
+
+<a href="/soda/new"><button>Create A Soda</button></a>
+<% sodas.forEach((soda, i) => { %>
+
+    <a href="/soda/<%= soda._id %>"><h2><%= soda.name %></h2></a>
+
+<% }) %>
