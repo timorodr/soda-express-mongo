@@ -35,7 +35,10 @@ router.get("/new", (req, res) => {
     res.render("soda/new.ejs")
 })
 // DESTROY ROUTE - DELETE ONE SODA
-
+router.delete("/:id", async (req, res) => {
+    await Soda.findByIdAndDelete(req.params.id)
+    res.redirect("/soda")
+})
 // UPDATE ROUTER - PUT - UPDATES ONE SODA
 
 // CREATE ROUTE - POST - CREATES A SODA
